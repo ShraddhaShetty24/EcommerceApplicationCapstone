@@ -1,0 +1,99 @@
+<app-header></app-header>
+
+<!-- ============== SECTION PAGETOP ============== -->
+<br/>
+<section class="padding-y-sm color">
+   <div class="container color py-3">
+      <a class="text-white" routerLink="/home">Home</a>
+      /
+      <a class="breadcrumb-item active text-white" aria-current="page">Product</a>
+   </div>
+    <!-- container //  -->
+</section>
+<br/>
+<br/>
+ <!-- ============== SECTION PAGETOP END// ============== -->
+ <!-- ============== SECTION CONTENT ============== -->
+<section class="padding-y">
+   <div class="container">
+      <div class="row">
+         <aside class="col-lg-6">
+            <article class="gallery-wrap">
+               <div class="img-big-wrap img-thumbnail mb-3">
+                  <a data-fslightbox="mygalley" data-type="image"> 
+                  <img class="product-img-main" height="560" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80"> 
+                  </a>
+               </div>
+               <!-- img-big-wrap.// -->
+               <div class="thumbs-wrap">
+                  <a data-fslightbox="mygalley" data-type="image" class="item-thumb"> 
+                  <img class="product-img" width="80" height="80" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80"> 
+                  </a>
+                  &nbsp; &nbsp;
+                  <a data-fslightbox="mygalley" data-type="image" class="item-thumb"> 
+                  <img class="product-img" width="80" height="80" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80">  
+                  </a>
+                  &nbsp; &nbsp;
+                  <a data-fslightbox="mygalley" data-type="image" class="item-thumb"> 
+                  <img class="product-img" width="80" height="80" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80">  
+                  </a>
+               </div>
+               <!-- thumbs-wrap.// -->
+            </article>
+            <!-- gallery-wrap .end// -->
+         </aside>
+         <main class="col-lg-6">
+            <article class="ps-lg-3">
+               <h3 class="title text-dark"> {{product.productName}} </h3>
+               <div class="rating-wrap my-3">
+                  <i class="fa fa-star"></i>
+                  <b class="label-rating text-warning"> {{product.rating}}</b>
+                  <i class="dot"></i>
+                  &nbsp; &nbsp;
+                  <span class="label-rating text-muted"> <i class="fa fa-shopping-basket"></i> {{product.productQuantity}} </span>
+                  <i class="dot"></i>
+                  <span class="label-rating text-success">In stock</span>
+               </div>
+               <!-- rating-wrap.// -->
+               <div class="mb-3"> 
+                  <var class="price h4"> &#8377;{{product.productPrice}}</var>
+               </div>
+               <p>{{product.productDescription}}</p>
+               <div class="row mb-4">
+                  <!-- col.// -->
+                  <div class="col-md-4 col-6 mb-3">
+                     <label class="form-label d-block">Quantity</label>
+                     <div class="input-group input-spinner">
+                        <button class="btn btn-icon btn-light" type="button" (click)="decreaseQuantity()">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#999" viewBox="0 0 24 24">
+                              <path d="M19 13H5v-2h14v2z"></path>
+                           </svg>
+                        </button>
+                        <input class="form-control text-center" placeholder="" [(ngModel)]="orderQuantity">
+                        <button class="btn btn-icon btn-light" type="button" (click)="increaseQuantity()">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#999" viewBox="0 0 24 24">
+                              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                           </svg>
+                        </button>
+                     </div>
+                     <!-- input-group.// -->
+                  </div>
+                  <!-- col.// -->
+               </div>
+               <!-- row.// -->
+               <a class="btn color text-white" (click)="addToCart(product.productId)"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
+            </article>
+            <!-- product-info-aside .// -->
+         </main>
+         <!-- col.// -->
+      </div>
+      <!-- row.// -->
+   </div>
+   <!-- container .//  -->
+</section>
+ <!-- ============== SECTION CONTENT END// ============== -->
+
+<br/>
+<br/>
+
+<app-footer></app-footer>
